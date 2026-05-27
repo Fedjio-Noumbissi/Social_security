@@ -281,6 +281,99 @@ const Dashboard: React.FC = () => {
     );
   }
 
+  // --- 0. VIEW FOR ADMIN ---
+  if (hasRole('ROLE_ADMIN')) {
+    return (
+      <div className="space-y-8 animate-fade-in">
+        <div>
+          <h1 className="text-2xl font-extrabold text-slate-900 flex items-center gap-3">
+            <div className="w-9 h-9 bg-violet-50 text-violet-500 rounded-xl flex items-center justify-center">
+              <Shield size={20} />
+            </div>
+            Administration Système
+          </h1>
+          <p className="text-slate-400 mt-1 ml-12">
+            Bonjour <span className="font-semibold text-slate-600">{user?.firstName}</span> — Espace Super Administrateur CSI.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex items-center justify-between">
+            <div>
+              <span className="text-slate-400 text-xs font-semibold uppercase tracking-wider">Votre Rôle</span>
+              <p className="text-xl font-extrabold text-slate-800 mt-1">Super Admin</p>
+              <p className="text-xs text-slate-400 mt-0.5">Accès total au système</p>
+            </div>
+            <div className="w-14 h-14 bg-violet-50 text-violet-500 rounded-2xl flex items-center justify-center">
+              <Shield size={28} />
+            </div>
+          </div>
+          <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex items-center justify-between">
+            <div>
+              <span className="text-slate-400 text-xs font-semibold uppercase tracking-wider">Compte</span>
+              <p className="text-lg font-bold text-slate-800 mt-1">{user?.firstName} {user?.lastName}</p>
+              <p className="text-xs text-slate-400 mt-0.5 truncate max-w-[160px]">{user?.email}</p>
+            </div>
+            <div className="w-14 h-14 bg-slate-100 text-slate-500 rounded-2xl flex items-center justify-center">
+              <Users size={28} />
+            </div>
+          </div>
+          <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex items-center justify-between">
+            <div>
+              <span className="text-slate-400 text-xs font-semibold uppercase tracking-wider">Statut Système</span>
+              <p className="text-xl font-extrabold text-emerald-600 mt-1">Opérationnel</p>
+              <p className="text-xs text-slate-400 mt-0.5">Tous les services actifs</p>
+            </div>
+            <div className="w-14 h-14 bg-emerald-50 text-emerald-500 rounded-2xl flex items-center justify-center">
+              <CheckCircle size={28} />
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6">
+          <h3 className="font-bold text-slate-800 mb-4 text-lg">Actions Disponibles</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Link to="/admin/assureurs"
+              className="flex items-center gap-4 p-5 rounded-2xl bg-violet-50 border border-violet-100 hover:bg-violet-100 hover:border-violet-200 transition-all duration-300 group">
+              <div className="w-12 h-12 bg-white text-violet-500 rounded-xl flex items-center justify-center shadow-sm">
+                <Shield size={24} />
+              </div>
+              <div>
+                <p className="font-bold text-slate-800">Gestion des Assureurs</p>
+                <p className="text-sm text-slate-500 mt-0.5">Créer, modifier et gérer les comptes assureurs</p>
+              </div>
+              <ArrowRight size={18} className="ml-auto text-violet-400 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link to="/register"
+              className="flex items-center gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-slate-100 transition-all duration-300 group">
+              <div className="w-12 h-12 bg-white text-slate-500 rounded-xl flex items-center justify-center shadow-sm">
+                <UserPlus size={24} />
+              </div>
+              <div>
+                <p className="font-bold text-slate-800">Créer un Compte</p>
+                <p className="text-sm text-slate-500 mt-0.5">Enregistrer un nouveau médecin ou assuré</p>
+              </div>
+              <ArrowRight size={18} className="ml-auto text-slate-400 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+        </div>
+
+        <div className="p-5 bg-amber-50 border border-amber-100 rounded-2xl flex items-start gap-4">
+          <div className="w-10 h-10 bg-amber-100 text-amber-500 rounded-xl flex items-center justify-center shrink-0">
+            <Activity size={20} />
+          </div>
+          <div>
+            <p className="font-semibold text-amber-800">Rôle Administrateur</p>
+            <p className="text-sm text-amber-700 mt-1">
+              En tant qu'administrateur, vous gérez uniquement les comptes assureurs.
+              Les assureurs gèrent à leur tour les médecins, patients, consultations et remboursements.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // --- 3. VIEW FOR PATIENT ---
   const totalReimbursedValue = recentRemboursements
     .filter(r => r.status === 'EFFECTUE')

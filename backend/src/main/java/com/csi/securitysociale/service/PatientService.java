@@ -89,6 +89,16 @@ public class PatientService {
     @Transactional
     public void deletePatient(Long id) {
         Patient patient = getPatientById(id);
+        
+        List<Consultation> consultations = consultationRepository.findByPatientIdOrderByDateDesc(id);
+        for (Consultation c : consultations) {
+            feuilleMaladieRepository.findByConsultationId(c.getId()).ifPresent(fm -> {
+                remboursementRepository.findByFeuilleMaladieId(fm.getId()).ifPresent(r -> remboursementRepository.delete(r));
+                feuilleMaladieRepository.delete(fm);
+            });
+            consultationRepository.delete(c);
+        }
+
         patientRepository.delete(patient);
     }
 

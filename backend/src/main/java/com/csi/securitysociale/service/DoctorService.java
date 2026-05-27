@@ -11,11 +11,30 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+import com.csi.securitysociale.entity.Consultation;
+import com.csi.securitysociale.entity.Patient;
+import com.csi.securitysociale.repository.ConsultationRepository;
+import com.csi.securitysociale.repository.FeuilleMaladieRepository;
+import com.csi.securitysociale.repository.PatientRepository;
+import com.csi.securitysociale.repository.RemboursementRepository;
+
 @Service
 public class DoctorService {
 
     @Autowired
     private DoctorRepository doctorRepository;
+
+    @Autowired
+    private PatientRepository patientRepository;
+
+    @Autowired
+    private ConsultationRepository consultationRepository;
+
+    @Autowired
+    private FeuilleMaladieRepository feuilleMaladieRepository;
+
+    @Autowired
+    private RemboursementRepository remboursementRepository;
 
     public List<Doctor> getAllDoctors() {
         return doctorRepository.findAll();
@@ -72,6 +91,22 @@ public class DoctorService {
     @Transactional
     public void deleteDoctor(Long id) {
         Doctor doctor = getDoctorById(id);
+        
+        List<Patient> patients = patientRepository.findByMedecinTraitantId(id);
+        for(Patient p : patients) {
+            p.setMedecinTraitant(null);
+            patientRepository.save(p);
+        }
+
+        List<Consultation> consultations = consultationRepository.findByDoctorIdOrderByDateDesc(id);
+        for (Consultation c : consultations) {
+            feuilleMaladieRepository.findByConsultationId(c.getId()).ifPresent(fm -> {
+                remboursementRepository.findByFeuilleMaladieId(fm.getId()).ifPresent(r -> remboursementRepository.delete(r));
+                feuilleMaladieRepository.delete(fm);
+            });
+            consultationRepository.delete(c);
+        }
+
         doctorRepository.delete(doctor);
     }
 }

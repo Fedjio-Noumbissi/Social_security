@@ -80,12 +80,13 @@ public class ConsultationService {
         FeuilleMaladie savedFeuille = feuilleMaladieRepository.save(feuille);
 
         // 4. Calculate Remboursement
-        // Business Rules:
-        // - Generalist: 100% refund (Standard Consultation Fee = 25.0 €)
-        // - Specialist: 80% refund (Standard Consultation Fee = 50.0 €)
-        double fee = "GENERALISTE".equals(doctor.getSpecialty()) ? 25.0 : 50.0;
+        // Business Rules (en FCFA):
+        // - Généraliste: 100% de remboursement (Tarif consultation = 15 000 FCFA)
+        // - Spécialiste: 80% de remboursement (Tarif consultation = 25 000 FCFA)
+        // Montant minimum de remboursement: 5 000 FCFA
+        double fee = "GENERALISTE".equals(doctor.getSpecialty()) ? 15000.0 : 25000.0;
         int rate = "GENERALISTE".equals(doctor.getSpecialty()) ? 100 : 80;
-        double refundAmount = fee * (rate / 100.0);
+        double refundAmount = Math.max(fee * (rate / 100.0), 5000.0);
 
         Remboursement remboursement = Remboursement.builder()
                 .feuilleMaladie(savedFeuille)

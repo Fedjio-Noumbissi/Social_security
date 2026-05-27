@@ -11,6 +11,7 @@ import Consultations from './pages/Consultations';
 import Remboursements from './pages/Remboursements';
 import Reports from './pages/Reports';
 import AdminAssureurs from './pages/AdminAssureurs';
+import PatientHistory from './pages/PatientHistory';
 
 // Protected route wrapper
 const ProtectedRoute: React.FC<{ children: React.ReactNode; allowedRoles?: string[] }> = ({ children, allowedRoles }) => {
@@ -61,6 +62,15 @@ const AppRoutes: React.FC = () => {
         element={
           <ProtectedRoute allowedRoles={['ROLE_ASSUREUR', 'ROLE_MEDECIN']}>
             <Patients />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/patients/:id/history"
+        element={
+          <ProtectedRoute allowedRoles={['ROLE_ASSUREUR', 'ROLE_MEDECIN']}>
+            <PatientHistory />
           </ProtectedRoute>
         }
       />
