@@ -47,6 +47,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       roles: ["ROLE_ASSUREUR"]
     },
     {
+      title: "Feuilles de Maladie",
+      path: "/feuilles-maladie",
+      icon: <FileText size={20} />,
+      roles: ["ROLE_ASSUREUR", "ROLE_MEDECIN", "ROLE_PATIENT"]
+    },
+    {
       title: "Consultations",
       path: "/consultations",
       icon: <FileText size={20} />,

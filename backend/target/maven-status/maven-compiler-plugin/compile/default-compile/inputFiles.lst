@@ -34,6 +34,7 @@
 /home/fedjio/Desktop/PROJECTS/Project_CSI/backend/src/main/java/com/csi/securitysociale/controller/AdminController.java
 /home/fedjio/Desktop/PROJECTS/Project_CSI/backend/src/main/java/com/csi/securitysociale/service/RemboursementService.java
 /home/fedjio/Desktop/PROJECTS/Project_CSI/backend/src/main/java/com/csi/securitysociale/controller/ConsultationController.java
+/home/fedjio/Desktop/PROJECTS/Project_CSI/backend/src/main/java/com/csi/securitysociale/controller/FeuilleMaladieController.java
 /home/fedjio/Desktop/PROJECTS/Project_CSI/backend/src/main/java/com/csi/securitysociale/config/SecurityConfig.java
 /home/fedjio/Desktop/PROJECTS/Project_CSI/backend/src/main/java/com/csi/securitysociale/entity/Prescription.java
 /home/fedjio/Desktop/PROJECTS/Project_CSI/backend/src/main/java/com/csi/securitysociale/dto/LoginRequest.java
