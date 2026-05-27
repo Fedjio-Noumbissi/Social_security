@@ -71,9 +71,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   );
 
   return (
-    <div className="min-h-screen bg-slate-50 flex">
+    <div className="h-screen bg-slate-50 flex overflow-hidden">
       {/* Sidebar - Desktop */}
-      <aside className="hidden lg:flex flex-col w-72 bg-white border-r border-slate-200/80 p-6 shrink-0 z-20">
+      <aside className="hidden lg:flex flex-col w-72 bg-white border-r border-slate-200/80 p-6 shrink-0 z-20 h-screen sticky top-0">
         {/* Brand */}
         <div className="flex items-center gap-3 px-2 py-4 mb-8">
           <div className="w-10 h-10 bg-brand-500/10 border border-brand-500/20 text-brand-500 rounded-xl flex items-center justify-center shadow-md shadow-brand-500/5">
@@ -134,7 +134,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           onClick={() => setMobileOpen(false)}
         />
       )}
-      <aside className={`fixed inset-y-0 left-0 w-72 bg-white p-6 z-40 lg:hidden flex flex-col transform transition-transform duration-300 ${
+      <aside className={`fixed inset-y-0 left-0 w-72 bg-white p-6 z-40 lg:hidden flex flex-col transform transition-transform duration-300 overflow-y-auto ${
         mobileOpen ? 'translate-x-0' : '-translate-x-full'
       }`}>
         <div className="flex items-center justify-between mb-8">
@@ -194,9 +194,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </aside>
 
       {/* Main Page Area */}
-      <div className="flex-1 flex flex-col min-w-0 overflow-y-auto">
-        {/* Top Header */}
-        <header className="flex items-center justify-between px-6 py-4 bg-white border-b border-slate-200/80 sticky top-0 z-10">
+      <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
+        {/* Top Header - sticky */}
+        <header className="flex items-center justify-between px-6 py-4 bg-white border-b border-slate-200/80 sticky top-0 z-10 shrink-0">
           <div className="flex items-center gap-4">
             <button 
               onClick={() => setMobileOpen(true)}
@@ -214,8 +214,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
         </header>
 
-        {/* Content Container */}
-        <main className="p-6 md:p-8 max-w-7xl w-full mx-auto flex-1">
+        {/* Content Container - only this scrolls */}
+        <main className="p-6 md:p-8 max-w-7xl w-full mx-auto flex-1 overflow-y-auto">
           {children}
         </main>
       </div>
