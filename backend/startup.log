@@ -1,0 +1,154 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m----------------------< [0;36mcom.csi:security-sociale[0;1m >----------------------[m
+[[1;34mINFO[m] [1mBuilding security-sociale 0.0.1-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mspring-boot-maven-plugin:3.2.5:run[m [1m(default-cli)[0;1m > [0;1mtest-compile[m @ [36msecurity-sociale[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:resources[m [1m(default-resources)[m @ [36msecurity-sociale[0;1m ---[m
+[[1;34mINFO[m] Copying 1 resource from src/main/resources to target/classes
+[[1;34mINFO[m] Copying 1 resource from src/main/resources to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:compile[m [1m(default-compile)[m @ [36msecurity-sociale[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:testResources[m [1m(default-testResources)[m @ [36msecurity-sociale[0;1m ---[m
+[[1;34mINFO[m] skip non existing resourceDirectory /home/fedjio/Desktop/PROJECTS/Project_CSI/backend/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.11.0:testCompile[m [1m(default-testCompile)[m @ [36msecurity-sociale[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mspring-boot-maven-plugin:3.2.5:run[m [1m(default-cli)[0;1m < [0;1mtest-compile[m @ [36msecurity-sociale[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mspring-boot-maven-plugin:3.2.5:run[m [1m(default-cli)[m @ [36msecurity-sociale[0;1m ---[m
+[[1;34mINFO[m] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2026-05-27T12:04:08.255+01:00  INFO 388218 --- [           main] c.c.s.SecuritySocialeApplication         : Starting SecuritySocialeApplication using Java 21.0.10 with PID 388218 (/home/fedjio/Desktop/PROJECTS/Project_CSI/backend/target/classes started by fedjio in /home/fedjio/Desktop/PROJECTS/Project_CSI/backend)
+2026-05-27T12:04:08.257+01:00  INFO 388218 --- [           main] c.c.s.SecuritySocialeApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-05-27T12:04:09.598+01:00  INFO 388218 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-27T12:04:09.669+01:00  INFO 388218 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 7 JPA repository interfaces.
+2026-05-27T12:04:10.261+01:00  INFO 388218 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-27T12:04:10.274+01:00  INFO 388218 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-27T12:04:10.275+01:00  INFO 388218 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-27T12:04:10.332+01:00  INFO 388218 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-27T12:04:10.333+01:00  INFO 388218 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2038 ms
+2026-05-27T12:04:10.408+01:00  INFO 388218 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-27T12:04:10.608+01:00  INFO 388218 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:security_sociale user=SA
+2026-05-27T12:04:10.609+01:00  INFO 388218 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-27T12:04:10.743+01:00  INFO 388218 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-27T12:04:10.817+01:00  INFO 388218 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-05-27T12:04:10.861+01:00  INFO 388218 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-27T12:04:11.152+01:00  INFO 388218 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-27T12:04:11.209+01:00  WARN 388218 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-27T12:04:12.170+01:00  INFO 388218 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: 
+    alter table if exists consultations 
+       alter column id set data type bigint
+Hibernate: 
+    alter table if exists consultations 
+       alter column doctor_id set data type bigint
+Hibernate: 
+    alter table if exists consultations 
+       alter column patient_id set data type bigint
+Hibernate: 
+    alter table if exists doctors 
+       alter column id set data type bigint
+Hibernate: 
+    alter table if exists doctors 
+       alter column user_id set data type bigint
+Hibernate: 
+    alter table if exists feuilles_maladie 
+       alter column id set data type bigint
+Hibernate: 
+    alter table if exists feuilles_maladie 
+       alter column consultation_id set data type bigint
+Hibernate: 
+    alter table if exists patients 
+       alter column id set data type bigint
+Hibernate: 
+    alter table if exists patients 
+       alter column medecin_traitant_id set data type bigint
+Hibernate: 
+    alter table if exists patients 
+       alter column user_id set data type bigint
+Hibernate: 
+    alter table if exists prescription_medicaments 
+       alter column id set data type bigint
+Hibernate: 
+    alter table if exists prescription_medicaments 
+       alter column prescription_id set data type bigint
+Hibernate: 
+    alter table if exists prescription_specialists 
+       alter column id set data type bigint
+Hibernate: 
+    alter table if exists prescription_specialists 
+       alter column prescription_id set data type bigint
+Hibernate: 
+    alter table if exists prescription_specialists 
+       alter column referred_doctor_id set data type bigint
+Hibernate: 
+    alter table if exists prescriptions 
+       alter column id set data type bigint
+Hibernate: 
+    alter table if exists prescriptions 
+       alter column consultation_id set data type bigint
+Hibernate: 
+    alter table if exists remboursements 
+       alter column id set data type bigint
+Hibernate: 
+    alter table if exists remboursements 
+       alter column feuille_maladie_id set data type bigint
+Hibernate: 
+    alter table if exists user_roles 
+       alter column user_id set data type bigint
+Hibernate: 
+    alter table if exists users 
+       alter column id set data type bigint
+2026-05-27T12:04:12.314+01:00  INFO 388218 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-27T12:04:12.804+01:00  INFO 388218 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-27T12:04:13.336+01:00  WARN 388218 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-27T12:04:13.646+01:00  INFO 388218 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5d796665, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7b3489b7, org.springframework.security.web.context.SecurityContextHolderFilter@5319f536, org.springframework.security.web.header.HeaderWriterFilter@79ac50fe, org.springframework.web.filter.CorsFilter@4df3b838, org.springframework.security.web.authentication.logout.LogoutFilter@18c8a027, com.csi.securitysociale.security.JwtAuthenticationFilter@1e9b0c92, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@503eac4c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1eaf95d2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3821a012, org.springframework.security.web.session.SessionManagementFilter@259d5279, org.springframework.security.web.access.ExceptionTranslationFilter@6eb06667, org.springframework.security.web.access.intercept.AuthorizationFilter@22109f72]
+2026-05-27T12:04:14.018+01:00  WARN 388218 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-05-27T12:04:14.020+01:00  INFO 388218 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-27T12:04:14.021+01:00  INFO 388218 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-27T12:04:14.023+01:00  INFO 388218 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-27T12:04:14.037+01:00  INFO 388218 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-27T12:04:14.050+01:00 ERROR 388218 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  8.062 s
+[[1;34mINFO[m] Finished at: 2026-05-27T12:04:14+01:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.springframework.boot:spring-boot-maven-plugin:3.2.5:run[m [1m(default-cli)[m on project [36msecurity-sociale[m: [1;31mProcess terminated with exit code: 1[m -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
